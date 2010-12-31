@@ -4,5 +4,9 @@ class Seat < ActiveRecord::Base
     if baggage > flight.baggage_allowance
       errors.add_to_base("You have too much baggage")
     end
+
+    if flight.seats.size >= flight.capacity
+      errors.add_to_base("The flights is fully booked")
+    end
   end
 end
