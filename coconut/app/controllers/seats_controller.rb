@@ -82,4 +82,10 @@ class SeatsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def flight_seats
+    @flight = Flight.find(params[:flight_id])
+    render :partial => "flights/seat_list", :locals => {:seats => @flight.seats}
+  end
+
 end
