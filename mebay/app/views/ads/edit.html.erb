@@ -1,6 +1,6 @@
 <h1>Editing <%= @ad.name %></h1>
 <% form_for(@ad, :url=>{:action=>'update'}) do |f| %>
-
+<%= f.error_messages %>
 <p>
   <strong>Name</strong><br>
   <%= f.text_field :name %>

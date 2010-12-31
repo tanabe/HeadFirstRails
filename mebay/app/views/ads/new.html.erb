@@ -1,6 +1,6 @@
 <h1>New ad</h1>
 <% form_for(@ad, :url=>{:action=>'create'}) do |f| %>
-
+<%=  f.error_messages %>
 <p>
   <strong>Name</strong><br>
   <%= f.text_field :name %>
